@@ -26,7 +26,51 @@ Fixed `quote.router.js` line 28: switch `app` to `router`. _This is the solution
 
 ### Bug 1
 
-...
+`TypeError: Router.use() requires a middleware function but got a Object`
+
+Added `module.exports = router` to the router file on line 28.
+
+### Bug 2
+
+`Cannot GET /`
+
+Removed quotes from line 8 in the router file: `router.get('/quotes', (req, res)`
+
+### Bug 3
+
+Removed extra curly brace from line 7 of the client file: `url: '/quotes}'`
+
+### Bug 4
+
+Added correct file path to line 17 in server file: `app.use(express.static('server/public'));`
+
+### Bug 5
+
+`TypeError: quotesFromServer is not iterable`
+
+Updated line 5 of router to make the quote list an array: `let quoteList = [];`
+
+### Bug 6
+
+Commented out line 24 of the client because there is no i defined for this loop: `// i += 1;`
+
+### Bug 7
+
+`ReferenceError: quotesList is not defined`
+
+Corrected variable name on line 21 of the router to fix the post request: `quoteList.push(quoteToAdd);`
+
+### Bug 8
+
+`ReferenceError: getQuote is not defined`
+
+Corrected function name in the client on line 52:  `getQuotes();`
+
+### Bug 9
+
+Sourced axios into HTML on line 9 instead of line 10 so that it's sourced above the client.
+
+### Bug 10
 
 ## Extra Practice (Optional)
 
