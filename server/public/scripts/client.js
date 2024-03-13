@@ -25,7 +25,7 @@ function getQuotes() {
         }
     }).catch((error) => {
         console.log(error);
-        alert('Something went wrong.');
+        alert(`Something went wrong.`);
     }); // ALWAYS add .catch
 }
 // Call the function
@@ -52,6 +52,6 @@ function submitForm(event) {
         getQuotes();
     }).catch((error) => {
         console.log(error);
-        alert('Something went wrong.');
+        alert(`Something went wrong.`);
     });
 }
